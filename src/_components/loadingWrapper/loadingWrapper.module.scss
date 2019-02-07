@@ -1,0 +1,13 @@
+@import '../../_styles/vars.scss';
+
+.container {
+  min-width: 100px;
+  min-height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress{
+  margin: $themespacingunit * 2,
+}

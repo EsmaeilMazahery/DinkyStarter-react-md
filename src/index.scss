@@ -1,0 +1,26 @@
+@import url(./_styles/font.scss);
+@import url(./_styles/components.scss);
+@import url(./_styles/layout.scss);
+
+
+
+html {
+  min-height: 100%;
+}
+
+html,
+body,
+#root,
+.App {
+  border: 0px;
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column
+}
+
+.App {
+  text-align: center;
+}

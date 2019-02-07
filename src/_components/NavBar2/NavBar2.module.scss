@@ -1,0 +1,91 @@
+@import '../../_styles/vars.scss';
+
+.appbar{
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.root {
+  width: '100%';
+}
+
+.grow {
+  flex-grow: 1;
+}
+
+.menuButton {
+  margin-left: -12;
+  margin-right: 20;
+}
+
+.title {
+  display: 'none';
+
+  @include breakpoint(sm) {
+    display: 'block';
+  }
+}
+
+.search {
+  position: 'relative';
+  border-radius: $borderradius-shape;
+
+  background-color: fade($color-white, 0.15);
+
+  :hover {
+    background-color: fade($color-white, 0.25);
+  }
+
+  margin-Right: $themespacingunit * 2;
+  margin-Left: 0;
+  width: '100%';
+
+  @include breakpoint(sm) {
+    marginLeft: $themespacingunit * 3;
+      width: 'auto';
+  }
+}
+
+.searchIcon {
+  width: $themespacingunit * 9;
+  height: '100%';
+  position: 'absolute';
+  pointer-events: 'none';
+  display: 'flex';
+  align-items: 'center';
+  justify-content: 'center';
+}
+
+.inputRoot {
+  color: 'inherit';
+    width: '100%';
+}
+
+.inputInput {
+  padding-top: $themespacingunit ;
+  padding-right: $themespacingunit;
+  padding-bottom: $themespacingunit ;
+  padding-left: $themespacingunit * 10 ;
+  //transition: theme.transitions.create('width') ;
+  width: '100%';
+
+  @include breakpoint(md) {
+    width: 200;
+  }
+}
+
+.sectionDesktop {
+
+  display: 'none';
+  @include breakpoint(md) {
+    display: 'flex';
+  }
+}
+
+.sectionMobile {
+
+  display: 'flex';
+  @include breakpoint(md) {
+    display: 'none';
+  }
+}

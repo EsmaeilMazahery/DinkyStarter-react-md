@@ -1,0 +1,16 @@
+@font-face {
+  font-family: 'BKoodkBd';
+  font-style: normal;
+  font-weight: 400;
+  src: local('BKoodkBd'), local('BKoodkBd'),
+    url('../assets/font/BKoodkBd.ttf') format('truetype'),
+    /* Safari, Android, iOS */
+}
+
+* {
+  font-family: 'BKoodkBd', sans-serif
+}
+
+.t3 {
+  font-size: 20pt;
+}

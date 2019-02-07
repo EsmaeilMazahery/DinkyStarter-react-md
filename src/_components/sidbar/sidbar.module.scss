@@ -1,0 +1,52 @@
+@import '../../_styles/vars.scss';
+
+.sidbar {
+    background-color: #313131;
+
+
+    box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.42), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+    transition-property: top, bottom, width;
+    transition-duration: .2s, .2s, .35s;
+    transition-timing-function: linear, linear, ease;
+
+    
+}
+
+.sidebaropen {
+    flex-basis: $drawerWidth;
+}
+.sidebarclose {
+    flex-basis: 0px;
+}
+
+.drawer {
+    width: $drawerWidth;
+    flex-shrink: 0;
+    white-space: 'nowrap';
+}
+
+.drawerOpen {
+    width: $drawerWidth;
+}
+
+.drawerClose {
+    overflow-x: 'hidden';
+    width: $themespacingunit * 7 + 1;
+
+    @include breakpoint(sm) {
+        width: $themespacingunit * 9 + 1;
+    }
+}
+
+.toolbar {
+    display: 'flex';
+    align-items: 'center';
+    justify-content: 'flex-end';
+    padding: '0 8px';
+    min-height: 62px;
+}
+
+.content {
+    flex-grow: 1;
+    padding: $themespacingunit * 3;
+}

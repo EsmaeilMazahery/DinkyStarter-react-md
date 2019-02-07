@@ -1,0 +1,106 @@
+@import '../../_styles/vars.scss';
+
+.appbar {
+  background-color: $color-mainbackground !important;
+  color: #4a4a4a !important;
+}
+
+.root {
+  width: 100%;
+  z-index: 1201;
+}
+
+.grow {
+  flex-grow: 1;
+}
+
+.menuButton {
+  margin-left: -12;
+  margin-right: 20;
+}
+
+.title {
+  display: none;
+
+  @include breakpoint(sm) {
+    display: block;
+  }
+}
+
+.search {
+  display: block;
+  position: relative;
+  border-radius: $borderradius-shape;
+  background-color: rgba(255, 255, 255, 0.15);
+  //background-color: fade($color-white, 0.15);
+
+  :hover {
+    background-color: rgba(255, 255, 255, 0.17);
+  }
+
+  margin-Right: $themespacingunit * 2;
+  margin-Left: 0;
+  width: 100%;
+
+  @include breakpoint(sm) {
+    marginLeft: $themespacingunit * 3;
+    width: auto;
+  }
+}
+
+.searchIcon {
+  width: $themespacingunit * 9;
+  height: 100%;
+  position: absolute;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inputRoot {
+  color: inherit;
+  width: 100%;
+}
+
+.inputInput {
+  padding: 8px 80px 8px 8px !important;
+  @include transition(width .3s ease-out);
+  width: 100%;
+
+  @include breakpoint(md) {
+    width: 120px;
+
+    :focus {
+      width: 200px;
+    }
+  }
+}
+
+@include breakpoint(md) {
+  .inputInput:focus {
+    width: 200px;
+  }
+}
+
+.sectionDesktop {
+  display: none;
+
+  @include breakpoint(md) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.sectionMobile {
+  display: flex;
+
+  @include breakpoint(md) {
+    display: none;
+  }
+}
+
+
+.fab {
+  margin: $themespacingunit;
+}
