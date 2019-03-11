@@ -7,6 +7,7 @@ const getDefaultState = _ => ({
   token: takeIfExists('token'),
   id: takeIfExists('id'),
   tokenExpirationTime: takeIfExists('tokenExpirationTime', Number),
+  backAddress:"/"
 })
 
 export default _ =>
@@ -17,6 +18,10 @@ export default _ =>
         id,
         token,
         tokenExpirationTime
+      }),
+       [a.changeBackAddress]: (state, { backAddress }) => ({
+        ...state,
+        backAddress
       }),
       [a.unauthorizeUser]: () => ({})
     },

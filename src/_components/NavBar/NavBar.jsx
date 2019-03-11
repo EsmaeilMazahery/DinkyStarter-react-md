@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import styles from './NavBar.module.scss';
 
@@ -17,6 +16,8 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
+import { connectTo } from '../../_utils/generic';
+import { unauthorizeUser } from '../../_actions/auth'
 
 class NavBar extends PureComponent {
   state = {
@@ -34,6 +35,11 @@ class NavBar extends PureComponent {
     this.handleMobileMenuClose();
   };
 
+  logOut = () => {
+    this.setState({ anchorEl: null });
+    this.handleMobileMenuClose();
+  };
+
   handleMobileMenuOpen = event => {
     this.setState({ mobileMoreAnchorEl: event.currentTarget });
   };
@@ -43,6 +49,7 @@ class NavBar extends PureComponent {
   };
 
   render() {
+    const { unauthorizeUser } = this.props;
     const { anchorEl, mobileMoreAnchorEl } = this.state;
     const isMenuOpen = Boolean(anchorEl);
     const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -55,8 +62,9 @@ class NavBar extends PureComponent {
         open={isMenuOpen}
         onClose={this.handleMenuClose}
       >
-        <MenuItem onClick={this.handleMenuClose}>Profile</MenuItem>
-        <MenuItem onClick={this.handleMenuClose}>My account</MenuItem>
+        <MenuItem onClick={this.handleMenuClose}>پروفایل</MenuItem>
+        <MenuItem onClick={this.handleMenuClose}>مشخصات</MenuItem>
+        <MenuItem onClick={unauthorizeUser}>خروج</MenuItem>
       </Menu>
     );
 
@@ -163,15 +171,9 @@ NavBar.defaultProps = {
   // bla: 'test',
 };
 
-const mapStateToProps = state => ({
-  companyName:state.generic.companyName
-});
-
-const mapDispatchToProps = dispatch => ({
-  // fnBlaBla: () => dispatch(action.name()),
-});
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(withStyles(styles)(NavBar));
+export default connectTo(
+  state => ({
+    companyName: state.generic.companyName
+  }),
+  {unauthorizeUser},(withStyles(styles)(NavBar))
+);

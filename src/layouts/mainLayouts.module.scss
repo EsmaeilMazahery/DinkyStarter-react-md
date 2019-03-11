@@ -1,0 +1,32 @@
+@import '../_styles/vars.scss';
+
+.Layout {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex: 1 0 100%;
+
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    background-color: $color-mainbackground !important;
+
+    .maincontent {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+.ddd {
+  background-color: $color-mainbackground;
+}

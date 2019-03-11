@@ -1,4 +1,5 @@
-export const PAGES_WITH_NAVBAR = ['/']
-export const PAGES_WITH_SIDEBAR = ['/']
-export const PAGES_WITH_AUTH = ['/']
+export const PAGES_WITH_AUTH = ['/','/city','/city/register','/city/:cityId','/region']
+export const PAGES_WITH_NAVBAR = [...PAGES_WITH_AUTH]
+export const PAGES_WITH_NAVBAR2 = []
+export const PAGES_WITH_SIDEBAR = [...PAGES_WITH_AUTH]
 export const PAGES_WITH_UNAUTH = ['/login','/forgetpassword','/role/:roleId']

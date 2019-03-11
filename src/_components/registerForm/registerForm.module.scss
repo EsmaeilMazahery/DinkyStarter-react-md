@@ -1,0 +1,13 @@
+.container {
+    form{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        
+        .actions{
+            display: flex;
+            justify-content: space-evenly;
+            flex: 1;
+        }
+    }
+}

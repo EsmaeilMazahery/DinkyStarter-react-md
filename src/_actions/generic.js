@@ -6,6 +6,12 @@ export const exitPage = createAction()
 export const moveMouse = createAction()
 export const changePageSize = createAction()
 export const tick = createAction()
+
+
+
+export const changeRowsPerPage= createAction()
 export const toggleSnackbar = createAction()
-export const receiveCompanyInfo = createAction()
 export const getCompanyInfo = createAction()
+export const receiveCompanyInfo = createAction()
+
+

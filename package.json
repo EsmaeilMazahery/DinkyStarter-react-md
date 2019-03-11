@@ -1,35 +1,45 @@
 {
-  "name": "front",
+  "name": "management",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@aspnet/signalr": "^1.0.4",
+    "@aspnet/signalr": "^1.1.2",
     "@fortawesome/fontawesome": "^1.1.8",
     "@fortawesome/fontawesome-free-solid": "^5.0.13",
-    "@fortawesome/fontawesome-svg-core": "^1.2.4",
-    "@fortawesome/free-solid-svg-icons": "^5.7.1",
-    "@fortawesome/react-fontawesome": "^0.1.3",
+    "@fortawesome/fontawesome-svg-core": "^1.2.15",
+    "@fortawesome/free-brands-svg-icons": "^5.7.2",
+    "@fortawesome/free-regular-svg-icons": "^5.7.2",
+    "@fortawesome/free-solid-svg-icons": "^5.7.2",
+    "@fortawesome/react-fontawesome": "^0.1.4",
     "@material-ui/core": "^3.9.2",
-    "@material-ui/icons": "^3.0.1",
+    "@material-ui/icons": "^3.0.2",
+    "filepond": "^4.2.0",
     "history": "^4.7.2",
     "immutable": "^4.0.0-rc.12",
     "jss-rtl": "^0.2.3",
     "lodash": "^4.17.11",
-    "luxon": "^1.4.2",
+    "luxon": "^1.11.2",
+    "material-ui-popup-state": "^1.2.0",
     "node-sass": "^4.11.0",
     "perfect-scrollbar": "^1.4.0",
-    "react": "^16.5.2",
+    "react": "^16.8.2",
     "react-document-title": "^2.0.3",
-    "react-dom": "^16.5.2",
+    "react-dom": "^16.8.2",
+    "react-dropzone": "^9.0.0",
+    "react-filepond": "^7.0.1",
     "react-hotkeys": "^1.1.4",
-    "react-redux": "^5.0.7",
+    "react-image-magnify": "^2.7.4",
+    "react-jss": "^8.6.1",
+    "react-redux": "^6.0.0",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "^2.1.3",
-    "redux": "^4.0.0",
+    "react-scripts": "2.1.5",
+    "redux": "^4.0.1",
     "redux-act": "^1.7.4",
-    "redux-form": "^7.4.2",
-    "redux-saga": "^0.16.0",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-form": "^8.1.0",
+    "redux-logger": "^3.0.6",
+    "redux-saga": "^1.0.1",
     "slate": "^0.44.10",
     "slate-react": "^0.21.16",
     "styled-components": "^4.1.3"
@@ -37,27 +47,11 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "mockrun": "REACT_APP_MOCK=true react-scripts start"
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
-  },
-  "devDependencies": {
-    "lint-staged": "^8.1.2",
-    "prettier": "^1.14.3",
-    "redux": "^4.0.1",
-    "redux-devtools-extension": "^2.13.7"
-  },
-  "lint-staged": {
-    "*.{js,json}": [
-      "prettier --single-quote --write",
-      "git add"
-    ]
-  },
-  "prettier": {
-    "semi": false
   },
   "browserslist": [
     ">0.2%",

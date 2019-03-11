@@ -11,7 +11,7 @@ export const minLength = min => value =>
 
 export const required = (
   name,
-  message = `Required ${name}`
+  message = `${name} اجباری است`
 ) => n => (n ? undefined : message)
 
 export const moreThan = (
@@ -29,16 +29,16 @@ export const integer = n =>
 
 export const lengthMoreThan = (
   limit,
-  message = `Length should be more than ${limit}`
+  message = `نمی تواند بیشتر از ${limit} کاراکتر باشد`
 ) => str => (!str || str.length < limit ? message : undefined)
 
 export const lengthLessThan = (
   limit,
-  message = `Length should be less than ${limit}`
+  message = `نمی تواند کمتر از ${limit} کاراکتر باشد`
 ) => str => (!str || str.length > limit ? message : undefined)
 
 export const email = value =>
-  !value || !EMAIL_REGEX.test(value) ? 'Invalid email address' : undefined
+  !value || !EMAIL_REGEX.test(value) ? 'ایمیل اشتباه است' : undefined
 
 export const uniqueAmong = (values, message = 'Should be unique') => v =>
   v && _.includes(values, v) ? message : undefined
@@ -47,4 +47,4 @@ export const website = value =>
   value && !WEBSITE_REGEX.test(value) ? 'Invalid website' : undefined
 
 export const mobile = value =>
-  !value || !MOBILE_REGEX.test(value) ? 'Invalid mobile' : undefined
+  !value || !MOBILE_REGEX.test(value) ? 'موبایل اشتباه است' : undefined

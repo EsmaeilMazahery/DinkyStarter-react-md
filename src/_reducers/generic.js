@@ -8,6 +8,7 @@ const getDefaultState = () => ({
   mouseX: 0,
   mouseY: 0,
   snackbarMessage: '',
+  rowsPerPage:10,
   companyName:takeIfExists("companyName")
 })
 
@@ -23,6 +24,10 @@ export default () =>
         ...state,
         mouseX,
         mouseY
+      }),
+      [a.changeRowsPerPage]: (state, { rowsPerPage }) => ({
+        ...state,
+        rowsPerPage
       }),
       [a.toggleSnackbar]: (state, snackbarMessage) => ({ ...state, snackbarMessage }),
       [a.receiveCompanyInfo]: (state, { companyName }) => ({

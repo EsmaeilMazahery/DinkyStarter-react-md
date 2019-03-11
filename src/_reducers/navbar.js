@@ -17,6 +17,12 @@ export default _ =>
         ...state,
         NavBarList,
       }),
+      [a.loadNavBar2]: (state, {
+        NavBarList2
+      }) => ({
+        ...state,
+        NavBarList2,
+      }),
       [a.loadSideBar]: (state, {
         SideBarList
       }) => ({

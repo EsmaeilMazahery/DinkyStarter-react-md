@@ -1,10 +1,12 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route ,Switch} from 'react-router-dom';
 
-export const ArrayRoute = ({ component: Component,patharray:Patharray, ...rest }) => (
-    Patharray.map((element, i) => 
+export const ArrayRoute = ({ component: Component, patharray: Patharray, ...rest }) => (
+    <Switch>
+       { Patharray.map((element, i) =>
         <Route {...rest} path={element} render={props => (<Component {...props} />)} key={i} />
-    )
+        )}
+    </Switch>
 )
 
 // export const PrivateRoute = ({ component: Component, ...rest }) => (

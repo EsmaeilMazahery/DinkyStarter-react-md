@@ -1,5 +1,10 @@
-import { combineReducers, createStore } from 'redux'
-import { reducer as formReducer } from 'redux-form'
+import {
+  combineReducers,
+  createStore
+} from 'redux'
+import {
+  reducer as formReducer
+} from 'redux-form'
 
 import navigation from './navigation'
 import auth from './auth'
@@ -12,9 +17,19 @@ import yourStories from './your-stories'
 import story from './story'
 import stories from './stories'
 import generic from './generic'
+import upload from './upload'
 
-import { unauthorizeUser } from '../_actions/auth'
-import { receiveMockState } from '../_actions/mock'
+import city from './baseInfo/city'
+import region from './baseInfo/region'
+import reseller from './baseInfo/reseller'
+import accounting from './baseInfo/accounting'
+
+import {
+  unauthorizeUser
+} from '../_actions/auth'
+import {
+  receiveMockState
+} from '../_actions/mock'
 
 const form = () => formReducer
 
@@ -32,13 +47,19 @@ const getNewReducer = _ =>
       yourStories,
       story,
       stories,
-      generic
+      generic,
+      upload,
+
+      city,
+      region,
+      reseller,
+      accounting
+
     }).reduce(
       (acc, [key, value]) => ({
         ...acc,
         [key]: value()
-      }),
-      {}
+      }), {}
     )
   )
 

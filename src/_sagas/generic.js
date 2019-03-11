@@ -1,5 +1,5 @@
-import { select, put, call, take, spawn } from 'redux-saga/effects'
-import { delay, eventChannel } from 'redux-saga';
+import { select, put, call, take, spawn, delay } from 'redux-saga/effects'
+import { eventChannel } from 'redux-saga';
 
 import { TICK } from '../_constants/generic'
 import { tick as tickAction, toggleSnackbar, receiveCompanyInfo } from '../_actions/generic';
@@ -54,7 +54,7 @@ function* listenNotifications() {
       console.info('SignalR: successfully connected')
     } catch(err) {
       console.info(`SignalR: attempt ${attempt}: failed to connect`)
-      yield call(delay, 1000)
+      yield delay(1000)
       connected = false
     }
   }
@@ -92,7 +92,7 @@ export function* startApp() {
 
   function* ticking() {
     yield put(tickAction())
-    yield call(delay, TICK)
+    yield delay(TICK)
     yield* ticking()
   }
   yield* ticking()

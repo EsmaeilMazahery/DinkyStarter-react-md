@@ -1,5 +1,5 @@
 import React from 'react'
-import { FormControl, InputLabel, Input, InputAdornment, TextField } from '@material-ui/core'
+import { FormControl, InputLabel, Input, InputAdornment } from '@material-ui/core'
 import styles from './textLoginUser.module.scss';
 import { withStyles } from '@material-ui/core/styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'

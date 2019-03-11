@@ -1,24 +1,27 @@
 import React from 'react'
-import { TextField } from '@material-ui/core'
+import { FormControl, InputLabel, Input } from '@material-ui/core'
 import styles from './textfield.module.scss';
 import { withStyles } from '@material-ui/core/styles';
+import renderFromHelper from '../renderFromHelper';
 
 const TextFieldForRender = ({
   input,
   label,
-  meta: { active, error, warning },
+  value,
+  className,
+  meta: { active, error, warning, touched },
   ...custom
 }) => {
-  const message = !active ? error || warning : undefined
-  const showError = Boolean(message && input.value)
   return (
-    <TextField
-      label={label}
-      error={showError}
-      helperText={message && input.value ? message : undefined}
-      {...input}
-      {...custom}
-    />
+    <FormControl className={className}>
+      <InputLabel htmlFor={input.name}>{label}</InputLabel>
+      <Input
+        {...input}
+        {...custom}
+        type='text'
+      />
+      {renderFromHelper({ touched, error })}
+    </FormControl >
   )
 }
 

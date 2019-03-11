@@ -1,0 +1,22 @@
+.base{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 15px;
+}
+
+.formControl{
+    margin: 15px !important;
+    flex: 1 1 auto;
+    max-width: 250px;
+}
+.formControl.bigControl{
+    flex-basis: 200px;
+}
+.formControl.full{
+    flex-basis: 100%;
+    max-width: none;
+}
+.break{
+    flex-basis: 100%;
+    width: 100%;
+}

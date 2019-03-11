@@ -1,0 +1,33 @@
+.btn {
+    width: 223px;
+}
+
+
+.box {
+    .search{
+        background-color: #c6c6c6;
+    }
+    .navigate {
+        display: flex;
+        margin: 5px;
+
+        span {
+            flex-grow: 1;
+            text-align: center
+        }
+
+        Button {
+            min-width: 25px;
+        }
+    }
+
+    .items {
+        .item {
+            padding: 0px;
+
+            .checkbox {
+                padding: 0px;
+            }
+        }
+    }
+}

@@ -4,16 +4,10 @@ import {closeDialog} from '../../_actions/dialog'
 
 import { connectTo } from '../../_utils/generic'
 
-import styles from './dialogWrapper.module.scss';
-import { withStyles } from '@material-ui/core/styles';
 import { Dialog, DialogTitle } from '@material-ui/core';
 
 class DialogWrapper extends React.Component {
-
-  handleClose = () => {
-    this.props.closeDialog();
-  };
-
+  
   render() {
     const { dialogContent,dialogTitle,openDialog,closeDialog} = this.props;
     if (!dialogContent) return null;
